@@ -1,6 +1,6 @@
-'use strict';
+
 angular
-        .module('app', ['ngDragDrop'])
+        .module('app', ['ngRoute','ngDragDrop','ui.bootstrap'])
         .config(['$routeProvider', function($routeProvider){
                 $routeProvider
                 .when('/', {
@@ -26,7 +26,7 @@ angular
                     { 'title': 'Item 11', 'code_equipe' : '11', 'nom' : 'Valenciennes','img' : 'static/img/11.png',  'drag': true },
                     { 'title': 'Item 12', 'code_equipe' : '12', 'nom' : 'St-Etienne','img' : 'static/img/12.png',  'drag': true },
                     { 'title': 'Item 13', 'code_equipe' : '13', 'nom' : 'Bastia', 'img' : 'static/img/13.png', 'drag': true },
-                    { 'title': 'Item 14', 'code_equipe' : '14', 'nom' : 'Paris', 'img' : 'static/img/14.png', 'drag': true },
+                    { 'title': 'Item 14', 'code_equipe' : '14', 'nom' : 'Paris SG', 'img' : 'static/img/14.png', 'drag': true },
                     { 'title': 'Item 15', 'code_equipe' : '15', 'nom' : 'Sochaux','img' : 'static/img/15.png',  'drag': true },
                     { 'title': 'Item 16', 'code_equipe' : '16', 'nom' : 'Reims', 'img' : 'static/img/16.png', 'drag': true },
                     { 'title': 'Item 17', 'code_equipe' : '17', 'nom' : 'Lorient', 'img' : 'static/img/17.png', 'drag': true },
@@ -42,9 +42,9 @@ angular
                             '&myParam2=' + JSON.stringify($scope.list2) ).success(
                                       function(data,status){
                                             console.log('call is ok ' + data);
-                                            $scope.resu = [{'res':'50'},
-                                                    {'res' : '70'}];
+                                            for (ele in data){
+                                                $scope.resu =  data[ele];
+                                            }
                                       });
                 }
-                
         }]);

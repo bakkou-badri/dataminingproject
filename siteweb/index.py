@@ -12,8 +12,9 @@ def get_prediction():
     group1 = json.loads(request.args['myParam1'])
     group2 = json.loads(request.args['myParam2'])
     print 'call prediction algo'
-    script.get_prediction(group1,group2)
-    return jsonify(success='true')
+    res =  script.get_prediction(group1,group2)
+    print type(res), 'res is ', res
+    return jsonify(resultats=res)
 
 if __name__ == '__main__':
     app.run()

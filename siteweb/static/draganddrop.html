@@ -1,3 +1,4 @@
+
 <div>
       <div class='contentWrapper ng-cloak'>
 
@@ -30,8 +31,8 @@
               <li class="span3" style='margin-left:30px;width: 200px;float:left;' >
                 <div class="thumbnail" >
                   <div class="caption" ng-show="resu  != null">
-                    <div  ng-repeat="item in resu" style="margin-bottom: 15px;margin-top: 20px;">
-                      {{item.res}}
+                    <div  ng-repeat="item in resu" style="margin-bottom: 25px;margin-top: 25px;">
+                      <div id="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{item.res}}" style="height: 20px;"><div class="progress-label ng-binding">{{item.res}}%</div><div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: {{item.res}}%;margin-top: -21px;" ></div></div>
                     </div>
                   </div>
                 </div>
@@ -53,6 +54,7 @@
         </div>
       </div>
 </div>
-<div style="margin-top: 300px;margin-left: 600px;">
-  	 <span class="btn btn-info" ng-click="getPrediction()">check</span>
+<div style="margin-top: 300px;">
+  	 <span class="btn btn-info" ng-click="getPrediction()" style="margin-left: -400px;">Resultats</span>
 </div>
+
